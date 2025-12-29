@@ -28,11 +28,16 @@ export default function AlbumSelector({onAlbumSelect, onAlbumsLoaded}) {
     fetchData();
   }, []);
 
-  console.log(`Data: ${Object.entries(data)}`);
+  console.log(`Albums: ${Object.entries(data)}`);
+
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const albumId = e.target.value;
+    onAlbumSelect(albumId);
+  };
 
   return (
-    <select>
-        {Object.keys(data).map((key: string) => (<option key={key} onClick={() => onAlbumSelect(data[key])}>{key}</option>))}
+    <select onChange={handleChange}>
+        {Object.keys(data).map((key: string) => (<option key={key} value={data[key]}>{key}</option>))}
     </select>
   );
 }
