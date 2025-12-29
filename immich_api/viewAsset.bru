@@ -1,0 +1,24 @@
+meta {
+  name: viewAsset
+  type: http
+  seq: 4
+}
+
+get {
+  url: http://192.168.0.3:2283/api/assets/{{id}}/thumbnail?size=preview
+  body: none
+  auth: inherit
+}
+
+params:query {
+  size: preview
+}
+
+vars:pre-request {
+  id: 1464d9cc-8e61-4e86-8ec4-4be9e00fb999
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

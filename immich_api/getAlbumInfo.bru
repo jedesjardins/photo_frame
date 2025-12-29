@@ -1,0 +1,16 @@
+meta {
+  name: getAlbumInfo
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://192.168.0.3:2283/api/albums/f4b52025-5403-4fac-8089-689220469996
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

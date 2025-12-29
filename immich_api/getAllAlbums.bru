@@ -1,0 +1,16 @@
+meta {
+  name: getAllAlbums
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://192.168.0.3:2283/api/albums
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
